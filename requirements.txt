@@ -2,4 +2,10 @@ pandas
 numpy
 scikit-learn
 seaborn
--e .
+matplotlib
+catboost
+tensorflow
+scikit-learn
+catboost
+xgboost
+# -e . undo this at last
