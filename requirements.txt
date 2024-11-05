@@ -8,4 +8,5 @@ tensorflow
 scikit-learn
 catboost
 xgboost
+dill
 # -e . undo this at last
