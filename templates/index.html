@@ -1,1 +1,64 @@
-<h1>Welcome to the Student Performance Prediction Website</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student_Performance_Prediction</title>
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+</head>
+<body>
+    <h1 class = 'title'>Welcome to the Student Performance Prediction Website</h1>
+
+
+<section class="content">
+    <h2>How It Works</h2>
+    <p>This tool uses a machine learning model to predict student performance based on various factors, such as gender,
+       ethnicity, parental education level, and more. The prediction can help identify areas for improvement.</p>
+</section>
+
+<section class="content">
+    <h2>Factors Affecting Performance</h2>
+    <p>Research shows that multiple factors, including background and access to resources, can affect a student's performance.</p>
+</section>
+
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".title", {
+        duration: 1,
+        opacity: 0,
+        y: -50,
+        ease: "power2.out"
+    });
+
+    gsap.from(".mb-3", {
+        scrollTrigger: {
+            trigger: ".mb-3",
+            start: "top 80%",
+        },
+        duration: 0.6,
+        opacity: 0,
+        x: -20,
+        stagger: 0.2,
+        ease: "power2.out"
+    });
+
+    gsap.from(".result", {
+        scrollTrigger: {
+            trigger: ".result",
+            start: "top 85%",
+        },
+        duration: 1,
+        opacity: 0,
+        scale: 0.5,
+        ease: "bounce.out"
+    });
+</script>
+
+</body>
+</html>

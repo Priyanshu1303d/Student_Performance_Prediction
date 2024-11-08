@@ -1,7 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+</head>
 <body>
     <div class="login">
-       <h1>Student Exam Performance Indicator</h1>
+       <h1 class="title">Student Exam Performance Indicator</h1>
    
        <form action="{{ url_for('predict_datapoint')}}" method="post">
         <h1>
@@ -9,7 +18,7 @@
         </h1>
         <div class="mb-3">
             <label class="form-label">Gender</label>
-            <select class="form-control" name="gender" placeholder="Enter you Gender" required>
+            <select class="form-control" name="gender" placeholder="Enter your Gender" required>
                 <option class="placeholder" selected disabled value="">Select your Gender</option>
                 <option value="male">
                     Male
@@ -104,8 +113,44 @@
             <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
         </div>
     </form>
-    <h2>
+    <h2 >
        THE  prediction is {{results}}
     </h2>
-   <body>
+
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".title", {
+        duration: 1,
+        opacity: 0,
+        y: -50,
+        ease: "power2.out"
+    });
+
+    gsap.from(".mb-3", {
+        scrollTrigger: {
+            trigger: ".mb-3",
+            start: "top 80%",
+        },
+        duration: 0.6,
+        opacity: 0,
+        x: -20,
+        stagger: 0.2,
+        ease: "power2.out"
+    });
+
+    gsap.from(".result", {
+        scrollTrigger: {
+            trigger: ".result",
+            start: "top 85%",
+        },
+        duration: 1,
+        opacity: 0,
+        scale: 0.5,
+        ease: "bounce.out"
+    });
+</script>
+
+</body>
 </html>
